@@ -336,7 +336,7 @@ namespace PoS
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(92, 116);
+            this.pictureBox6.Location = new System.Drawing.Point(538, 31);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(300, 300);
             this.pictureBox6.TabIndex = 20;

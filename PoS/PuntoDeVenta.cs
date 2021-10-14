@@ -95,6 +95,7 @@ namespace PoS
                 //MessageBox.Show(query);
                 try
                 {
+                    
                     MySqlConnection mySqlConnection = new MySqlConnection("server=127.0.0.1; user=root; database=verificador_de_precios; SSL mode=none");
                     mySqlConnection.Open();
                     MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
@@ -134,6 +135,20 @@ namespace PoS
 
                 label11.Text= $"$ {Math.Round(Convert.ToDouble(textBox1.Text), 2)}";
                 label12.Text = $"$ {Math.Round(Convert.ToDouble(textBox1.Text) - total, 2)}";
+                dataGridView1.Rows.Clear();
+                textBox1.Clear();
+                textBox1.Focus();
+                
+            }
+            if (e.KeyChar == 'D' || e.KeyChar == 'd')
+            {
+                e.Handled = true;
+                //MessageBox.Show($"¿Va a pagar? {textBox1.Text} {total} {Environment.NewLine} " +
+                //    $"{Convert.ToDouble(textBox1.Text) - total}");
+
+                label10.Text = "$ ";
+                label11.Text = "$ ";
+                label12.Text = "$ ";
                 dataGridView1.Rows.Clear();
                 textBox1.Clear();
                 textBox1.Focus();
