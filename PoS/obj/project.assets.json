@@ -839,19 +839,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JUANN\\.nuget\\packages\\": {}
+    "C:\\Users\\alber\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JUANN\\OneDrive\\Escritorio\\Administracion de PI\\Nueva carpeta (2)\\PoS\\PoS\\PoS\\PoS.csproj",
+      "projectUniqueName": "C:\\Users\\alber\\source\\repos\\pos-api2\\PoS\\PoS.csproj",
       "projectName": "PoS",
-      "projectPath": "C:\\Users\\JUANN\\OneDrive\\Escritorio\\Administracion de PI\\Nueva carpeta (2)\\PoS\\PoS\\PoS\\PoS.csproj",
-      "packagesPath": "C:\\Users\\JUANN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JUANN\\OneDrive\\Escritorio\\Administracion de PI\\Nueva carpeta (2)\\PoS\\PoS\\PoS\\obj\\",
+      "projectPath": "C:\\Users\\alber\\source\\repos\\pos-api2\\PoS\\PoS.csproj",
+      "packagesPath": "C:\\Users\\alber\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\alber\\source\\repos\\pos-api2\\PoS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JUANN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\alber\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -900,7 +900,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

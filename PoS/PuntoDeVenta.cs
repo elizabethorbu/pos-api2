@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Microsoft.VisualBasic;
 
 namespace PoS
 {
     public partial class PuntoDeVenta : Form
     {
         private double total = 0.0;
+        public int pagoCliente = 0;
+        public double cambio = 0.0;
+
         public PuntoDeVenta()
         {
             InitializeComponent();
         }
 
+     
         private void PuntoDeVenta_Load(object sender, EventArgs e)
         {
 
@@ -96,7 +101,7 @@ namespace PoS
                 try
                 {
                     
-                    MySqlConnection mySqlConnection = new MySqlConnection("server=127.0.0.1; user=root; database=verificador_de_precios; SSL mode=none");
+                    MySqlConnection mySqlConnection = new MySqlConnection("server=127.0.0.1; user=root; password=!SoyR00t341$; database=punto_venta; SSL mode=none");
                     mySqlConnection.Open();
                     MySqlCommand mySqlCommand = new MySqlCommand(query, mySqlConnection);
                     MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
@@ -143,15 +148,33 @@ namespace PoS
             if (e.KeyChar == 'D' || e.KeyChar == 'd')
             {
                 e.Handled = true;
-                //MessageBox.Show($"¿Va a pagar? {textBox1.Text} {total} {Environment.NewLine} " +
-                //    $"{Convert.ToDouble(textBox1.Text) - total}");
 
-                label10.Text = "$ ";
-                label11.Text = "$ ";
-                label12.Text = "$ ";
-                dataGridView1.Rows.Clear();
-                textBox1.Clear();
-                textBox1.Focus();
+                bool saldoSuficiente = false;
+
+                // tomar formulario.
+                string valor = "0";
+                if (PuntoDeVenta.InputBox("Cantidad", "Ingresa Cantidad", ref valor) == DialogResult.OK){
+                    pagoCliente = Int32.Parse(valor);
+                    if (pagoCliente >= total)
+                    {
+                        cambio = pagoCliente - total;
+                        label11.Text = "$ " + pagoCliente;
+                        label12.Text = "$ " + cambio;
+                        saldoSuficiente = true;
+                    } else
+                    {
+                        MessageBox.Show("Saldo insuficiente");
+                    }
+
+                    if (saldoSuficiente == true)
+                    {
+                        AutoClosingMessageBox.Show("Imprimiendo...", "Imprimir Ventana", 2000);
+                        dataGridView1.Rows.Clear();
+                        textBox1.Clear();
+                        textBox1.Focus(); label11.Text = "$ ";
+                        label12.Text = "$ ";
+                    }
+                }
 
             }
         }
@@ -167,6 +190,78 @@ namespace PoS
         }
 
 
+        // Processar compra
+        public static DialogResult InputBox(string titulo, string texto, ref string valor)
+        {
+            Form form = new Form();
+            Label label = new Label();
+            TextBox textBox = new TextBox();
+            Button buttonOk = new Button();
+            Button buttonCancel = new Button();
 
+            form.Text = titulo;
+            label.Text = texto;
+            textBox.Text = valor;
+
+            buttonOk.Text = "OK";
+            buttonCancel.Text = "Cancel";
+            buttonOk.DialogResult = DialogResult.OK;
+            buttonCancel.DialogResult = DialogResult.Cancel;
+
+            label.SetBounds(9, 20, 372, 13);
+            textBox.SetBounds(12, 36, 372, 20);
+            buttonOk.SetBounds(228, 72, 75, 23);
+            buttonCancel.SetBounds(309, 72, 75, 23);
+
+            label.AutoSize = true;
+            textBox.Anchor = textBox.Anchor | AnchorStyles.Right;
+            buttonOk.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonCancel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+
+            form.ClientSize = new Size(396, 107);
+            form.Controls.AddRange(new Control[] { label, textBox, buttonOk, buttonCancel });
+            form.ClientSize = new Size(Math.Max(300, label.Right + 10), form.ClientSize.Height);
+            form.FormBorderStyle = FormBorderStyle.FixedDialog;
+            form.StartPosition = FormStartPosition.CenterScreen;
+            form.MinimizeBox = false;
+            form.MaximizeBox = false;
+            form.AcceptButton = buttonOk;
+            form.CancelButton = buttonCancel;
+
+            DialogResult dialogResult = form.ShowDialog();
+            valor = textBox.Text;
+            return dialogResult;
+        }
+
+        // Imprimiendo...
+        public class AutoClosingMessageBox
+        {
+            System.Threading.Timer _timeoutTimer;
+            string _caption;
+            AutoClosingMessageBox(string text, string caption, int timeout)
+            {
+                _caption = caption;
+                _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
+                    null, timeout, System.Threading.Timeout.Infinite);
+                using (_timeoutTimer)
+                    MessageBox.Show(text, caption);
+            }
+            public static void Show(string text, string caption, int timeout)
+            {
+                new AutoClosingMessageBox(text, caption, timeout);
+            }
+            void OnTimerElapsed(object state)
+            {
+                IntPtr mbWnd = FindWindow("#32770", _caption); // lpClassName is #32770 for MessageBox
+                if (mbWnd != IntPtr.Zero)
+                    SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+                _timeoutTimer.Dispose();
+            }
+            const int WM_CLOSE = 0x0010;
+            [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+            static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+            [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+            static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+        }
     }
 }
