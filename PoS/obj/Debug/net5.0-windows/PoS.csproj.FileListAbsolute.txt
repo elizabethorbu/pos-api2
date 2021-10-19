@@ -115,32 +115,3 @@ C:\Users\JUANN\OneDrive\Escritorio\Administracion de PI\Nueva carpeta (2)\PoS\Po
 C:\Users\JUANN\OneDrive\Escritorio\Administracion de PI\Nueva carpeta (2)\PoS\PoS\PoS\obj\Debug\net5.0-windows\ref\PoS.dll
 C:\Users\JUANN\OneDrive\Escritorio\Administracion de PI\Nueva carpeta (2)\PoS\PoS\PoS\obj\Debug\net5.0-windows\PoS.pdb
 C:\Users\JUANN\OneDrive\Escritorio\Administracion de PI\Nueva carpeta (2)\PoS\PoS\PoS\obj\Debug\net5.0-windows\PoS.genruntimeconfig.cache
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\PoS.exe
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\PoS.deps.json
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\PoS.runtimeconfig.json
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\PoS.runtimeconfig.dev.json
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\PoS.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\ref\PoS.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\PoS.pdb
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\BouncyCastle.Crypto.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\Google.Protobuf.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\K4os.Compression.LZ4.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\K4os.Compression.LZ4.Streams.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\K4os.Hash.xxHash.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\MySql.Data.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\Ubiety.Dns.Core.dll
-C:\Users\alber\source\repos\pos-api2\PoS\bin\Debug\net5.0-windows\Zstandard.Net.dll
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.csproj.AssemblyReference.cache
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.Form1.resources
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.Properties.Resources.resources
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.PuntoDeVenta.resources
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.VentanaPagar.resources
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.csproj.GenerateResource.cache
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.AssemblyInfoInputs.cache
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.AssemblyInfo.cs
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.csproj.CoreCompileInputs.cache
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.dll
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\ref\PoS.dll
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.pdb
-C:\Users\alber\source\repos\pos-api2\PoS\obj\Debug\net5.0-windows\PoS.genruntimeconfig.cache
